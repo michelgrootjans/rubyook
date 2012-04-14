@@ -23,14 +23,21 @@ class Ook
   attr_writer :verbose
   attr_accessor :ifd, :ofd, :code
 
-  def verbose(msg = nil)
-    STDERR.puts "#{self.class}: #{msg}" if @verbose and msg
+  def verbose(msg = nil, print = "puts", &block)
+    if(block_given?)
+      @efd.print "#{msg}" if @verbose and msg
+      yield
+      @efd.send(print, " => #{print_memory}") if @verbose and msg
+    else
+      @efd.send(print, "#{msg}") if @verbose and msg
+    end
+      
     @verbose
   end
 
-  def initialize(code = '', ifd = STDIN, ofd = STDOUT)
+  def initialize(code = '', ifd = STDIN, ofd = STDOUT, efd = STDERR)
     @verbose = false
-    @ifd, @ofd = ifd, ofd
+    @ifd, @ofd, @efd = ifd, ofd, efd
     @code = code
     setup
   end
@@ -39,6 +46,8 @@ class Ook
     @pc = 0
     @loops = []
     @mem = MemoryArray.new
+    verbose "starting clean memory" do
+    end
     parse
   end
 
@@ -67,37 +76,42 @@ class Ook
   protected
 
   def ookd_ookq
-    verbose 'move pointer forward'
-    @mem.next
+    verbose '.? move pointer forward' do
+      @mem.next
+    end
   end
 
   def ookq_ookd
-    verbose 'move pointer backward'
-    @mem.prev
+    verbose '?. move pointer backward' do
+      @mem.prev
+    end
   end
 
   def ookd_ookd
-    verbose 'increment pointer cell'
-    +@mem
+    verbose '.. increment pointer cell' do
+      @mem.+@
+    end
   end
 
   def ookx_ookx
-    verbose 'decrement pointer cell'
-    -@mem
+    verbose '!! decrement pointer cell' do
+      @mem.-@
+    end
   end
 
   def ookd_ookx
-    verbose 'now reading input'
+    verbose '.! now reading input'
     @mem.put(@ifd.read(1))
   end
 
   def ookx_ookd
-    verbose 'now writing output'
+    verbose "!. now writing =>\t [", "print"
     @ofd.write @mem.get.chr
+    verbose " (#{@mem.get})]"
   end
 
   def ookx_ookq
-    verbose 'evaluating start loop'
+    verbose '!? evaluating start loop'
     if @mem.get == 0
       verbose "loop skipped: #@pc"
       skip_loop
@@ -108,7 +122,7 @@ class Ook
   end
 
   def ookq_ookx
-    verbose 'evaluating end loop'
+    verbose '?! evaluating end loop'
     raise UnmatchedEndLoop unless @loops.last
     @mem.get != 0 ? @pc = @loops.last : @loops.pop
   end
@@ -139,6 +153,20 @@ class Ook
     @ooks.slice(@pc*2, 2).join('_').downcase.gsub('!', 'x').gsub('?','q').gsub('.','d')
   rescue NoMethodError  # happens when last instruction is an end loop
     ''
+  end
+  
+  def print_memory
+    text = []
+    @mem.array.each_with_index do |item, index|
+      value = ""
+      value << "[" if index == @mem.pointer
+      value << "#{item}"
+      value << "]" if index == @mem.pointer
+      text << value
+    end
+    
+    "\t[#{text.join(', ')}]"
+    
   end
 end
 

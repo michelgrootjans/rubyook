@@ -12,6 +12,11 @@ describe "a new MemoryArray" do
     array.get.should == 7
   end
   
+  it "can set its pointer from a string" do
+    array.put("7")
+    array.get.should == 7
+  end
+  
   it "can increment its pointer" do
     array.+@
     array.get.should == 1

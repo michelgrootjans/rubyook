@@ -1,5 +1,5 @@
 class MemoryArray
-  attr_reader :pointer, :maxpointer
+  attr_reader :pointer, :maxpointer, :array
 
   def initialize
     @maxpointer = @pointer = 0;
@@ -23,8 +23,8 @@ class MemoryArray
     @array[@pointer]
   end
 
-  def put(value)
-    @array[@pointer] = value
+  def put(value=0)
+    @array[@pointer] = value.to_i
   end
 
   def +@
