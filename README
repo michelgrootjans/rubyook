@@ -1,0 +1,11 @@
+Ook! language interpreter - http://www.dangermouse.net/esoteric/ook.html
+
+The only ruby ook implementation I found didn't work. I fixed the memory array implementation.
+
+I couldn't find the original author. Original copyright information:
+Copyright (c) 2010 Alejandro Martinez Ruiz <alex at@ flawedcode dot. org>
+Licensed under 3-clause BSD License (New BSD License).
+
+Ook.run 'Ook. Ook! Ook! Ook? Ook! Ook. Ook! Ook! Ook? Ook!'
+
+As a program: ook file.ook [-v]
