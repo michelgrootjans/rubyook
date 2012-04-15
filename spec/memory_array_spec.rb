@@ -18,19 +18,19 @@ describe "a new MemoryArray" do
   end
   
   it "can increment its pointer" do
-    array.+@
+    array.increment
     array.get.should == 1
   end
   
   it "can decrement its pointer" do
-    array.-@
+    array.decrement
     array.get.should == -1
   end
   
   it "can move to next pointer" do
     array.next
     array.get.should == 0
-    array.+@
+    array.increment
     array.get.should == 1
     array.prev
     array.get.should == 0

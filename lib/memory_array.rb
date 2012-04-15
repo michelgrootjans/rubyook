@@ -1,18 +1,15 @@
 class MemoryArray
-  attr_reader :pointer, :maxpointer, :array
+  attr_reader :pointer, :array
 
   def initialize
-    @maxpointer = @pointer = 0;
+    @pointer = 0;
     @array = [0]
     super
   end
 
   def next
-    if @pointer == @maxpointer
-      @array << 0
-      @maxpointer += 1
-    end
     @pointer += 1
+    rebase_array
   end
 
   def prev
@@ -23,15 +20,23 @@ class MemoryArray
     @array[@pointer]
   end
 
-  def put(value=0)
+  def put(value = 0)
     @array[@pointer] = value.to_i
   end
 
-  def +@
+  def increment
     put(get + 1)
   end
-
-  def -@
+  
+  def decrement
     put(get - 1)
+  end
+  
+  private
+  
+  def rebase_array
+    if @pointer == @array.length
+      @array << 0
+    end
   end
 end
