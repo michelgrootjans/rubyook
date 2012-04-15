@@ -89,13 +89,13 @@ class Ook
 
   def ookd_ookd
     verbose '.. increment pointer cell' do
-      @mem.+@
+      @mem.increment
     end
   end
 
   def ookx_ookx
     verbose '!! decrement pointer cell' do
-      @mem.-@
+      @mem.decrement
     end
   end
 
