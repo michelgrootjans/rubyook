@@ -1,0 +1,97 @@
+#print 'H' (9 x 8 == 72 == 'H')
+Ook. Ook?
+
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. # +9
+
+Ook! Ook?
+	Ook? Ook.
+	
+	Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  #+8
+	
+	Ook. Ook?
+	Ook! Ook!
+Ook? Ook!
+
+Ook? Ook.
+Ook! Ook. 
+
+#print 'e' (72 + 5x6 - 1 == 101 == 'e')
+Ook. Ook?
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. # +5
+
+Ook! Ook?
+	Ook? Ook.
+	
+	Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook. # +6
+	
+	Ook. Ook?
+	Ook! Ook!
+Ook? Ook!
+Ook? Ook.
+Ook! Ook! # 1--
+
+Ook! Ook. 
+
+#print 'll' (101 + 7 == 108 == 'l')
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. # +7
+Ook! Ook.
+Ook! Ook.
+
+#print 'o' (108 + 3 == 111 == 'o')
+Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook! Ook.
+
+#print 'SPACE' (8 x 4 == 32 == SPACE)
+Ook. Ook? Ook. Ook?
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. # +8
+Ook! Ook?
+	Ook? Ook.
+	
+	Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  # +4 
+	
+	Ook. Ook?
+	Ook! Ook!
+Ook? Ook!
+Ook? Ook.
+Ook! Ook.
+
+#print 'A' (8x8 + 1 == 65 == 'A')
+Ook. Ook? Ook. Ook?
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. # +8
+Ook! Ook?
+	Ook? Ook.
+	
+	Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook.  # +8
+	
+	Ook. Ook?
+	Ook! Ook!
+Ook? Ook!
+Ook? Ook.
+Ook. Ook. #+1
+Ook! Ook.
+
+#print 'CC' (65 + 2 == 67 == 'C')
+Ook. Ook. Ook. Ook. # +2
+Ook! Ook. Ook! Ook.
+
+#print 'U' (67 + 4x4 + 2 == 85 == 'U')
+Ook. Ook?
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. # +4
+Ook! Ook?
+	Ook? Ook.
+	
+	Ook. Ook.  Ook. Ook.  Ook. Ook.  Ook. Ook. # +4
+	
+	Ook. Ook?
+	Ook! Ook!
+Ook? Ook!
+Ook? Ook.
+Ook. Ook. Ook. Ook. # +2
+Ook! Ook.
+
+
+
+#print 'new line' (10 == '\n')
+Ook. Ook? Ook. Ook?
+Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. 
+Ook! Ook. 
